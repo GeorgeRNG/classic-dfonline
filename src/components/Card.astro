@@ -1,0 +1,32 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    link: string;
+}
+
+const { title, description, link } = Astro.props;
+---
+
+<a href={link} role="article">
+    <h2>{title}</h2>
+    <p>{description}</p>
+</a>
+
+<style>
+    a {
+        display: block;
+        background-color: #0003;
+        transition: background-color 100ms;
+        padding: 0.8em;
+        border: solid #000 0.4ch;
+        border-radius: 1em;
+
+        text-decoration: none;
+        color: white;
+    }
+
+    a:focus, a:hover {
+        background-color: #0005;
+    }
+</style>
